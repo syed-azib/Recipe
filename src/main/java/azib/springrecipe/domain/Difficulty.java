@@ -1,4 +1,4 @@
-package azib.springrecipe.recipe.domain;
+package azib.springrecipe.domain;
 
 public enum Difficulty {
     EASY, MODERATE, HARD

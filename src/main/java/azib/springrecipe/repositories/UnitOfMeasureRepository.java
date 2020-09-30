@@ -1,7 +1,10 @@
 package azib.springrecipe.repositories;
 
-import azib.springrecipe.recipe.domain.UnitOfMeasure;
+import azib.springrecipe.domain.UnitOfMeasure;
 import org.springframework.data.repository.CrudRepository;
 
+import java.util.Optional;
+
 public interface UnitOfMeasureRepository extends CrudRepository<UnitOfMeasure,Long> {
+    Optional<UnitOfMeasure> findByDescription(String description);
 }

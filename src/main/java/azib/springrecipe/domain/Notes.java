@@ -1,4 +1,4 @@
-package azib.springrecipe.recipe.domain;
+package azib.springrecipe.domain;
 
 import javax.persistence.*;
 

@@ -1,4 +1,4 @@
-package azib.springrecipe.recipe;
+package azib.springrecipe;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
