@@ -24,7 +24,7 @@ public class Recipe {
     private String direction;
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "recipe")
-    private Set<Ingredient> ingredients;
+    private Set<Ingredient> ingredients = new HashSet<>();
 
     // private Difficulty difficulty;
 

@@ -5,6 +5,7 @@ import lombok.*;
 import javax.persistence.*;
 import java.util.Set;
 
+@EqualsAndHashCode(exclude = {"recipes"})
 @Data
 @Entity
 public class Category {
