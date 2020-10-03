@@ -4,27 +4,28 @@ import azib.springrecipe.domain.Category;
 import azib.springrecipe.domain.UnitOfMeasure;
 import azib.springrecipe.repositories.CategoryRepository;
 import azib.springrecipe.repositories.UnitOfMeasureRepository;
+import azib.springrecipe.services.RecipeService;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.util.Optional;
 
+@Slf4j
 @Controller
 public class IndexController {
-    private CategoryRepository categoryRepository;
-    private UnitOfMeasureRepository unitOfMeasureRepository;
+    private final RecipeService recipeService;
 
-    public IndexController(CategoryRepository categoryRepository, UnitOfMeasureRepository unitOfMeasureRepository) {
-        this.categoryRepository = categoryRepository;
-        this.unitOfMeasureRepository = unitOfMeasureRepository;
+    public IndexController(RecipeService recipeService) {
+        this.recipeService = recipeService;
     }
 
     @RequestMapping({"","/","/index"})
-    public String getIndexPage(){
-        Optional<Category> categoryOptional = categoryRepository.findByDescription("AMERICAN");
-        Optional<UnitOfMeasure> unitOfMeasureOptional = unitOfMeasureRepository.findByDescription("Teaspoon");
-        System.out.println("Cat ID is: " + categoryOptional.get().getId());
-        System.out.println("UOM ID is: " + unitOfMeasureOptional.get().getId());
+    public String getIndexPage(Model model){
+        log.debug("I'm in the index controller");
+
+        model.addAttribute("recipes",recipeService.getRecipes());
         return "recipes";
     }
 
