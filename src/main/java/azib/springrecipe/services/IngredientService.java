@@ -1,2 +1,7 @@
-package azib.springrecipe.services;public interface IngredientService {
+package azib.springrecipe.services;
+
+import azib.springrecipe.commands.IngredientCommand;
+
+public interface IngredientService {
+    IngredientCommand findRecupeIdAndIngredientId(Long recipeId, Long ingredientId);
 }
