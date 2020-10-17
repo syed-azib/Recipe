@@ -1,16 +1,10 @@
 package azib.springrecipe.controllers;
 
-import azib.springrecipe.domain.Category;
-import azib.springrecipe.domain.UnitOfMeasure;
-import azib.springrecipe.repositories.CategoryRepository;
-import azib.springrecipe.repositories.UnitOfMeasureRepository;
 import azib.springrecipe.services.RecipeService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
-
-import java.util.Optional;
 
 @Slf4j
 @Controller
@@ -26,7 +20,7 @@ public class IndexController {
         log.debug("I'm in the index controller");
 
         model.addAttribute("recipes",recipeService.getRecipes());
-        return "recipes";
+        return "index";
     }
 
 }
